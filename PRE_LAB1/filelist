@@ -1,0 +1,5 @@
+./src/ha.sv
+./src/fa.sv
+./src/nAdder.sv
+./src/core.sv
+./src/multipliers.sv

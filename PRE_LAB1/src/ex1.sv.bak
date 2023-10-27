@@ -1,0 +1,45 @@
+/* verilator lint_off UNOPTFLAT */
+module ex1 #(
+    parameter DATA_SIZE = 32
+)(
+    // input
+    input logic [DATA_SIZE-1:0] dataA_i ,
+                                dataB_i ,
+    input logic                 C_i     ,
+
+    // output
+    output logic[DATA_SIZE-1:0] S_o ,
+    output logic                C_o 
+);
+    logic [DATA_SIZE:1] C_temp ;
+
+    fa fulladder_0 (
+        // input
+        .A_i(dataA_i[0]) ,
+        .B_i(dataB_i[0]) ,
+        .C_i(C_i)        ,
+
+        // output
+        .S_o(S_o[0])     ,
+        .C_o(C_temp[1])
+    );
+
+    genvar i ;
+    generate
+        for(i=1 ; i <= DATA_SIZE-1 ; i++) begin
+            fa fulladder(
+                // input
+                .A_i(dataA_i[i]) ,
+                .B_i(dataB_i[i]) ,
+                .C_i(C_temp[i])  ,
+
+                // output
+                .S_o(S_o[i])     ,
+                .C_o(C_temp[i+1])
+            );
+        end
+    endgenerate
+
+    assign C_o = C_temp[DATA_SIZE] ;
+
+endmodule : ex1

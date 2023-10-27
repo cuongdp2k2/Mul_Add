@@ -1,0 +1,49 @@
+module multipliers#(
+    parameter DATA_SIZE = 4
+)(
+    // input
+    input logic [DATA_SIZE-1:0] A_i ,
+                                B_i ,
+
+    // output
+    output logic [2*DATA_SIZE-1:0] P_o 
+);
+    logic [DATA_SIZE-1:0] S_temp [DATA_SIZE-1:0] ;
+    logic                 C_temp [DATA_SIZE-1:0] ;
+    
+    core Core_Start(
+        // input
+        .A_i (A_i)    ,
+        .B_i (0)      ,
+        .b_i (B_i[0]) ,
+        .C_i (0)      ,
+
+        //output
+        .S_o(S_temp[0]) ,
+        .C_o(C_temp[0])
+    );
+
+    genvar i ;
+    generate
+        for(i=1 ; i<=DATA_SIZE-1 ; i++) begin : Core
+            core pCore(
+                // input
+                .A_i (A_i)    ,
+                .B_i ({C_temp[i-1],S_temp[i-1][DATA_SIZE-1:1]}) ,
+                .b_i (B_i[i]) ,
+                .C_i (0)      ,
+
+                //output
+                .S_o(S_temp[i]) ,
+                .C_o(C_temp[i])
+            );
+        end
+        
+        for(i=0 ; i<DATA_SIZE-1 ; i++) begin : Output_Stage
+            assign P_o[i] = S_temp[i][0] ;
+			end
+        
+        assign P_o[2*DATA_SIZE-1:DATA_SIZE-1] = {C_temp[DATA_SIZE-1],S_temp[DATA_SIZE-1]} ;
+    endgenerate
+
+endmodule : multipliers
