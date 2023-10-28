@@ -1,0 +1,29 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Fri Oct 27 09:12:26 2023
+[*]
+[dumpfile] "/home/dpcuong/FPGA/LAB1_EX2/wave.fst"
+[dumpfile_mtime] "Fri Oct 27 09:11:15 2023"
+[dumpfile_size] 4112992
+[savefile] "/home/dpcuong/FPGA/LAB1_EX2/wave.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -434 30
+*-4.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 214
+[signals_width] 126
+[sst_expanded] 1
+[sst_vpaned_height] 151
+@28
+TOP.clk_i
+@24
+TOP.dataA_i[7:0]
+TOP.dataB_i[7:0]
+@28
+TOP.C_i
+@25
+TOP.S_o[7:0]
+@28
+TOP.C_o
+[pattern_trace] 1
+[pattern_trace] 0

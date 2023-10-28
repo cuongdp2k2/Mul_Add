@@ -1,5 +1,1 @@
-./src/ha.sv
-./src/fa.sv
-./src/nAdder.sv
-./src/core.sv
-./src/multipliers.sv
+./src/decode_7seg.sv

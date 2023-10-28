@@ -1,5 +1,5 @@
 module multipliers#(
-    parameter DATA_SIZE = 4
+    parameter DATA_SIZE = 8
 )(
     // input
     input logic [DATA_SIZE-1:0] A_i ,

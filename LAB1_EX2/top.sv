@@ -1,16 +1,19 @@
 module top (
     // input
-        input logic  [7:0]   A_i        ,
-        input logic          clk_i      ,
+        input logic  [7:0]   dataA_i, dataB_i,
+        input logic          clk_i, C_i      ,
 
     // output
-        output logic         overflow_o ,
-                             carry_o    ,
-        output logic [7:0]   S_o    
+        output logic [7:0]   S_o ,
+        output logic         C_o   
      
 );
-    main ex1(
+    nAdder dut(
         .*
     );
+
+    always @(posedge clk_i) begin
+        
+    end
 
 endmodule : top
