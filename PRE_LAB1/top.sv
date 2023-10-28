@@ -1,7 +1,7 @@
 module top (
     // input
-        input logic [17:0] SW 			,
-        input logic [3:0]  KEY        	,
+        input logic [17:0] SW 		   ,
+        input logic [3:0]  KEY         ,
         input logic       CLOCK_50     ,
 
     // output
@@ -22,13 +22,13 @@ module top (
 		endcase
 	 end
 
-	 decode_7seg Decode_HEX0 ( .data_i(SW[15:12]) , .data_o(HEX0) ) ;
-	 decode_7seg Decode_HEX1 ( .data_i(SW[11:8]) , .data_o(HEX1) ) ;
-	 decode_7seg Decode_HEX2 ( .data_i(SW[7:4]) , .data_o(HEX2) ) ;
-	 decode_7seg Decode_HEX3 ( .data_i(SW[3:0]) , .data_o(HEX3) ) ;
-	 decode_7seg Decode_HEX4 ( .data_i(Output_wire[15:12]) , .data_o(HEX4) ) ;
-	 decode_7seg Decode_HEX5 ( .data_i(Output_wire[11:8]) , .data_o(HEX5) ) ;
-	 decode_7seg Decode_HEX6 ( .data_i(Output_wire[7:4]) , .data_o(HEX6) ) ;
-	 decode_7seg Decode_HEX7 ( .data_i(Output_wire[3:0]) , .data_o(HEX7) ) ;
+	decode_7seg Decode_HEX7 ( .data_i(SW[15:12]) 			, .data_o(HEX7) ) ;
+	decode_7seg Decode_HEX6 ( .data_i(SW[11:8]) 			, .data_o(HEX6) ) ;
+	decode_7seg Decode_HEX5 ( .data_i(SW[7:4]) 				, .data_o(HEX5) ) ;
+	decode_7seg Decode_HEX4 ( .data_i(SW[3:0]) 				, .data_o(HEX4) ) ;
+	decode_7seg Decode_HEX3 ( .data_i(Output_wire[15:12]) 	, .data_o(HEX3) ) ;
+	decode_7seg Decode_HEX2 ( .data_i(Output_wire[11:8]) 	, .data_o(HEX2) ) ;
+	decode_7seg Decode_HEX1 ( .data_i(Output_wire[7:4]) 	, .data_o(HEX1) ) ;
+	decode_7seg Decode_HEX0 ( .data_i(Output_wire[3:0]) 	, .data_o(HEX0) ) ;
 	 
 endmodule : top
