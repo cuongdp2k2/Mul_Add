@@ -73,7 +73,7 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__1(Vtop__Syms* __restrict vlSymsp) {
     vlTOPp->carryFlag_o = (1U & ((IData)(vlTOPp->top__DOT__dut__DOT__C_wire) 
                                  >> 8U));
     vlTOPp->overflowFlag_o = (1U & (((IData)(vlTOPp->top__DOT__dut__DOT__C_wire) 
-                                     >> 8U) | ((IData)(vlTOPp->top__DOT__dut__DOT__C_wire) 
+                                     >> 8U) ^ ((IData)(vlTOPp->top__DOT__dut__DOT__C_wire) 
                                                >> 7U)));
     vlTOPp->top__DOT__dut__DOT__A_reg = vlTOPp->A_i;
     vlTOPp->top__DOT__dut__DOT__S_reg = vlTOPp->top__DOT__dut__DOT__S_result_wire;

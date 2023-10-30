@@ -25,7 +25,7 @@ module main
             fa Adder(
                 // Input
                 .A_i(A_i[i]) ,
-                .B_i(B_i[i] | M_i) ,
+                .B_i(B_i[i] ^ M_i) ,
                 .C_i(C_wire[i]) ,
 
                 // Output

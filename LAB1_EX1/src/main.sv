@@ -24,7 +24,7 @@ module main
     // Clock processing
     always @(posedge clk_i) begin : Update_IO
         A_reg <= A_i ;
-        overflowFlag_o <= C_wire[DATA_SIZE] | C_wire[DATA_SIZE-1];
+        overflowFlag_o <= C_wire[DATA_SIZE] ^ C_wire[DATA_SIZE-1];
         carryFlag_o <= C_wire[DATA_SIZE] ;
         S_reg <= S_result_wire  ;
     end

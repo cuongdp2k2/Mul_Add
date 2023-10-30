@@ -114,14 +114,41 @@ void Vtop::traceFullSub0(void* userp, VerilatedFst* tracep) {
         tracep->fullCData(oldp+12,(vlTOPp->top__DOT____Vcellinp__ex04__data_i[1]),8);
         tracep->fullSData(oldp+13,((0xffffU & ((0U 
                                                 == (IData)(vlTOPp->sel_i))
-                                                ? ((IData)(vlTOPp->top__DOT__ex04__DOT__A_reg) 
-                                                   + (IData)(vlTOPp->top__DOT__ex04__DOT__B_reg))
+                                                ? (
+                                                   ((0xff00U 
+                                                     & ((- (IData)(
+                                                                   (1U 
+                                                                    & ((IData)(vlTOPp->top__DOT__ex04__DOT__A_reg) 
+                                                                       >> 7U)))) 
+                                                        << 8U)) 
+                                                    | (IData)(vlTOPp->top__DOT__ex04__DOT__A_reg)) 
+                                                   + 
+                                                   ((0xff00U 
+                                                     & ((- (IData)(
+                                                                   (1U 
+                                                                    & ((IData)(vlTOPp->top__DOT__ex04__DOT__B_reg) 
+                                                                       >> 7U)))) 
+                                                        << 8U)) 
+                                                    | (IData)(vlTOPp->top__DOT__ex04__DOT__B_reg)))
                                                 : (
                                                    (1U 
                                                     == (IData)(vlTOPp->sel_i))
                                                     ? 
-                                                   ((IData)(vlTOPp->top__DOT__ex04__DOT__A_reg) 
-                                                    - (IData)(vlTOPp->top__DOT__ex04__DOT__B_reg))
+                                                   (((0xff00U 
+                                                      & ((- (IData)(
+                                                                    (1U 
+                                                                     & ((IData)(vlTOPp->top__DOT__ex04__DOT__A_reg) 
+                                                                        >> 7U)))) 
+                                                         << 8U)) 
+                                                     | (IData)(vlTOPp->top__DOT__ex04__DOT__A_reg)) 
+                                                    - 
+                                                    ((0xff00U 
+                                                      & ((- (IData)(
+                                                                    (1U 
+                                                                     & ((IData)(vlTOPp->top__DOT__ex04__DOT__B_reg) 
+                                                                        >> 7U)))) 
+                                                         << 8U)) 
+                                                     | (IData)(vlTOPp->top__DOT__ex04__DOT__B_reg)))
                                                     : 
                                                    ((2U 
                                                      == (IData)(vlTOPp->sel_i))

@@ -22,8 +22,8 @@ module ex4 #(
 
     always_comb begin : ALU
         case (sel_i)
-            ADD_MODE    : P_temp = {{8{A_reg[7]}},A_reg} + {{8{A_reg[7]}},B_reg} ;
-            SUB_MODE    : P_temp = {8'b0,A_reg} - {8'b0,B_reg} ;
+            ADD_MODE    : P_temp = {{8{A_reg[7]}},A_reg} + {{8{B_reg[7]}},B_reg} ;
+            SUB_MODE    : P_temp = {{8{A_reg[7]}},A_reg} - {{8{B_reg[7]}},B_reg} ;
             MUL_MODE    : P_temp = A_reg * B_reg ; 
             default:      P_temp = 0             ;
         endcase

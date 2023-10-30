@@ -72,12 +72,38 @@ VL_INLINE_OPT void Vtop::_sequent__TOP__1(Vtop__Syms* __restrict vlSymsp) {
     // Body
     vlTOPp->top__DOT__ex04__DOT__P_reg = (0xffffU & 
                                           ((0U == (IData)(vlTOPp->sel_i))
-                                            ? ((IData)(vlTOPp->top__DOT__ex04__DOT__A_reg) 
-                                               + (IData)(vlTOPp->top__DOT__ex04__DOT__B_reg))
+                                            ? (((0xff00U 
+                                                 & ((- (IData)(
+                                                               (1U 
+                                                                & ((IData)(vlTOPp->top__DOT__ex04__DOT__A_reg) 
+                                                                   >> 7U)))) 
+                                                    << 8U)) 
+                                                | (IData)(vlTOPp->top__DOT__ex04__DOT__A_reg)) 
+                                               + ((0xff00U 
+                                                   & ((- (IData)(
+                                                                 (1U 
+                                                                  & ((IData)(vlTOPp->top__DOT__ex04__DOT__B_reg) 
+                                                                     >> 7U)))) 
+                                                      << 8U)) 
+                                                  | (IData)(vlTOPp->top__DOT__ex04__DOT__B_reg)))
                                             : ((1U 
                                                 == (IData)(vlTOPp->sel_i))
-                                                ? ((IData)(vlTOPp->top__DOT__ex04__DOT__A_reg) 
-                                                   - (IData)(vlTOPp->top__DOT__ex04__DOT__B_reg))
+                                                ? (
+                                                   ((0xff00U 
+                                                     & ((- (IData)(
+                                                                   (1U 
+                                                                    & ((IData)(vlTOPp->top__DOT__ex04__DOT__A_reg) 
+                                                                       >> 7U)))) 
+                                                        << 8U)) 
+                                                    | (IData)(vlTOPp->top__DOT__ex04__DOT__A_reg)) 
+                                                   - 
+                                                   ((0xff00U 
+                                                     & ((- (IData)(
+                                                                   (1U 
+                                                                    & ((IData)(vlTOPp->top__DOT__ex04__DOT__B_reg) 
+                                                                       >> 7U)))) 
+                                                        << 8U)) 
+                                                    | (IData)(vlTOPp->top__DOT__ex04__DOT__B_reg)))
                                                 : (
                                                    (2U 
                                                     == (IData)(vlTOPp->sel_i))
